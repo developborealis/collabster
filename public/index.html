@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Collabster</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <main class="container">
+      <div class="logo-card" aria-hidden="true">
+        <div class="logo-icon">
+          <svg viewBox="0 0 48 48" width="48" height="48" fill="none" aria-hidden="true">
+            <path d="M18 18a6 6 0 1 0-12 0 6 6 0 0 0 12 0Zm24 0a6 6 0 1 0-12 0 6 6 0 0 0 12 0Z" stroke="white" stroke-width="3" stroke-linecap="round"/>
+            <path d="M4 34c2.5-4 7-6 12-6s9.5 2 12 6" stroke="white" stroke-width="3" stroke-linecap="round"/>
+            <path d="M20 34c2.5-4 7-6 12-6s9.5 2 12 6" stroke="white" stroke-width="3" stroke-linecap="round"/>
+          </svg>
+        </div>
+      </div>
+
+      <h1 class="title">Collabster</h1>
+      <p class="subtitle">Где встречаются творческие умы</p>
+
+      <section class="categories" aria-label="Категории">
+        <div class="chip">
+          <span class="chip-icon">📷</span>
+          <span class="chip-label">Фото</span>
+        </div>
+        <div class="chip">
+          <span class="chip-icon">🎨</span>
+          <span class="chip-label">Дизайн</span>
+        </div>
+        <div class="chip">
+          <span class="chip-icon">🎵</span>
+          <span class="chip-label">Музыка</span>
+        </div>
+        <div class="chip">
+          <span class="chip-icon">👥</span>
+          <span class="chip-label">Еще</span>
+        </div>
+      </section>
+
+      <nav class="auth-tabs" aria-label="Авторизация">
+        <button class="tab active" data-target="signin">Войти</button>
+        <button class="tab" data-target="signup">Регистрация</button>
+      </nav>
+
+      <form class="signin" id="signinForm" action="#" method="post" onsubmit="return false">
+        <label class="sr-only" for="email">Адрес электронной почты</label>
+        <input id="email" name="email" type="email" placeholder="Адрес электронной почты" autocomplete="email" required />
+
+        <label class="sr-only" for="password">Пароль</label>
+        <input id="password" name="password" type="password" placeholder="Пароль" autocomplete="current-password" required />
+
+        <button type="submit">Войти</button>
+      </form>
+
+      <form class="signup hidden" id="signupForm" action="#" method="post" onsubmit="return false">
+        <div class="grid2">
+          <input id="suName" name="name" type="text" placeholder="Полное имя" required />
+          <input id="suRole" name="role" type="text" placeholder="Роль, например Дизайнер" required />
+        </div>
+        <div class="grid2">
+          <input id="suCity" name="city" type="text" placeholder="Город" />
+          <input id="suPhone" name="phone" type="tel" placeholder="Номер телефона" />
+        </div>
+        <div class="photo-upload-section">
+          <label for="suPhotoFile" class="photo-upload-label">📷 Загрузить фотографию профиля</label>
+          <input id="suPhotoFile" name="photoFile" type="file" accept="image/*" style="display: none;" />
+          <div id="photoPreview" class="photo-preview" style="display: none;">
+            <img id="previewImage" src="" alt="Предварительный просмотр" />
+            <button type="button" id="removePhoto" class="remove-photo-btn">×</button>
+          </div>
+        </div>
+        <textarea id="suDesc" name="desc" rows="3" placeholder="Краткая биография / что вы ищете" required></textarea>
+        <input id="suTags" name="tags" type="text" placeholder="Навыки (через запятую)" />
+        <div class="grid2">
+          <input id="suEmail" name="email" type="email" placeholder="Адрес электронной почты" required />
+          <input id="suPassword" name="password" type="password" placeholder="Пароль" required />
+        </div>
+        <button type="submit" class="primary">Создать аккаунт</button>
+      </form>
+      <div id="log" class="log info" style="display:none"></div>
+      <script type="module" src="/app.js"></script>
+    </main>
+  </body>
+  
+</html>
+
+

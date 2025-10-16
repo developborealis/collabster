@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Мой профиль • Collabster</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/styles.css" />
+    <link rel="stylesheet" href="/profile.css" />
+  </head>
+  <body>
+    <main class="profile-wrap">
+      <header class="profile-header">
+        <h1>Профиль</h1>
+        <button id="backBtn" class="icon-btn" title="Назад к поиску">←</button>
+      </header>
+
+      <div class="profile-main">
+        <div class="profile-info">
+          <div class="profile-pic">
+            <img id="profileImage" src="" alt="Фотография профиля" />
+            <div class="badge">ⓘ</div>
+          </div>
+          <div class="profile-details">
+            <h2 id="profileName">Загрузка...</h2>
+            <div class="profile-meta">
+              <span id="profileRole">Загрузка...</span>
+              <span id="profileCity">Загрузка...</span>
+            </div>
+          </div>
+        </div>
+
+        <section class="about-section">
+          <div class="section-header">
+            <h3>О себе</h3>
+            <button id="editAboutBtn" class="edit-btn">✏️</button>
+          </div>
+          <div class="about-content">
+            <p id="aboutText">Пока нет описания. Нажмите редактировать, чтобы добавить.</p>
+            <div id="aboutEdit" class="edit-form hidden">
+              <textarea id="aboutInput" rows="3" placeholder="Расскажите о себе..."></textarea>
+              <div class="edit-actions">
+                <button id="saveAboutBtn" class="primary">Сохранить</button>
+                <button id="cancelAboutBtn" class="secondary">Отмена</button>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="skills-section">
+          <div class="section-header">
+            <h3>Навыки и экспертиза</h3>
+            <button id="editSkillsBtn" class="edit-btn">✏️</button>
+          </div>
+          <div class="skills-content">
+            <div id="skillsDisplay" class="skills-tags"></div>
+            <div id="skillsEdit" class="edit-form hidden">
+              <input id="skillsInput" type="text" placeholder="Навыки (через запятую)" />
+              <div class="edit-actions">
+                <button id="saveSkillsBtn" class="primary">Сохранить</button>
+                <button id="cancelSkillsBtn" class="secondary">Отмена</button>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="portfolio-section">
+          <div class="section-header">
+            <h3>Портфолио</h3>
+            <button id="addPhotoBtn" class="edit-btn">+</button>
+          </div>
+          <div class="portfolio-content">
+            <div id="portfolioGrid" class="portfolio-grid"></div>
+            <div id="uploadForm" class="upload-form hidden">
+              <input type="file" id="portfolioFile" accept="image/*" multiple />
+              <div class="edit-actions">
+                <button id="uploadPortfolioBtn" class="primary">Загрузить</button>
+                <button id="cancelUploadBtn" class="secondary">Отмена</button>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="connect-section">
+          <h3>Контакты</h3>
+          <div class="connect-links">
+            <button id="whatsappBtn" class="whatsapp-btn">
+              <span class="whatsapp-icon">📱</span>
+              <span>Написать в WhatsApp</span>
+            </button>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <div id="log" class="log info" style="display:none"></div>
+    <script type="module" src="/profile.js"></script>
+  </body>
+</html>
