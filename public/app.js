@@ -9,7 +9,7 @@ const auth = getAuth(app);
 const db = getFirestore(app);
 const storage = getStorage(app);
 const logEl = document.getElementById('log');
-function showLog(message, type='info'){ if(!logEl) return; logEl.textContent = message; logEl.className = `log ${type}`; logEl.style.display = 'block'; setTimeout(()=>{ logEl.style.display='none'; }, 5000); }
+function showLog(message, type = 'info') { if (!logEl) return; logEl.textContent = message; logEl.className = `log ${type}`; logEl.style.display = 'block'; setTimeout(() => { logEl.style.display = 'none'; }, 5000); }
 console.log('[App] Firebase initialized for project:', firebaseConfig.projectId);
 
 const signInForm = document.querySelector('#signinForm');
@@ -89,7 +89,7 @@ if (params.get('mode') === 'signup') {
 signInForm.addEventListener('submit', async (e) => {
   e.preventDefault();
   button.disabled = true;
-    button.textContent = 'Вход...';
+  button.textContent = 'Вход...';
   try {
     console.log('[Auth] Sign in attempt for', emailInput.value.trim());
     await signInWithEmailAndPassword(auth, emailInput.value.trim(), passwordInput.value);
@@ -115,7 +115,7 @@ signUpForm.addEventListener('submit', async (e) => {
     phone: document.querySelector('#suPhone').value.trim(),
     desc: document.querySelector('#suDesc').value.trim(),
     tags: (document.querySelector('#suTags').value || '').split(',').map(s => s.trim()).filter(Boolean),
-    photo: 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=1200&auto=format&fit=crop' // Default photo
+    photo: 'https://cdn.pixabay.com/photo/2023/02/18/11/00/icon-7797704_640.png' // Default user icon
   };
   const email = document.querySelector('#suEmail').value.trim();
   const password = document.querySelector('#suPassword').value;
@@ -137,7 +137,7 @@ signUpForm.addEventListener('submit', async (e) => {
       ...profile,
       createdAt: serverTimestamp()
     };
-    
+
     // Upload photo if selected
     if (selectedPhotoFile) {
       try {
@@ -148,10 +148,10 @@ signUpForm.addEventListener('submit', async (e) => {
         showLog('Ошибка загрузки фотографии, используется фото по умолчанию', 'error');
       }
     }
-    
+
     await setDoc(doc(db, 'profiles', uid), data, { merge: true });
     console.log('[Profiles] Upserted profile for uid', uid, data);
-    showLog('Профиль сохранен. Перенаправление…','info');
+    showLog('Профиль сохранен. Перенаправление…', 'info');
     // redirect immediately; auth listener will also redirect but do it eagerly
     window.location.href = '/discover.html';
   } catch (err) {
@@ -164,7 +164,7 @@ signUpForm.addEventListener('submit', async (e) => {
     signUpBtn.disabled = false;
     signUpBtn.textContent = 'Создать аккаунт';
     // Allow auth state redirect again
-    setTimeout(()=>{ isSavingProfile = false; }, 500);
+    setTimeout(() => { isSavingProfile = false; }, 500);
   }
 });
 

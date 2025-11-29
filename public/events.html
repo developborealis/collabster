@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>События • Collabster</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/styles.css" />
+    <link rel="stylesheet" href="/events.css" />
+  </head>
+  <body>
+    <main class="events-wrap page-with-nav">
+      <header class="events-header">
+        <h2>События</h2>
+        <button id="signOut" class="icon-btn" title="Выйти">⎋</button>
+      </header>
+
+      <section class="events-content">
+        <div class="placeholder-content">
+          <div class="placeholder-icon">📅</div>
+          <h3>События скоро появятся</h3>
+          <p>Здесь будут отображаться интересные события и мероприятия для творческих людей.</p>
+        </div>
+      </section>
+    </main>
+
+    <nav class="bottom-nav">
+      <a href="/discover.html" class="nav-item">
+        <span class="nav-icon">❤️</span>
+        <span class="nav-label">Collabs</span>
+      </a>
+      <a href="/events.html" class="nav-item active">
+        <span class="nav-icon">📅</span>
+        <span class="nav-label">Events</span>
+      </a>
+      <a href="/profile.html" class="nav-item">
+        <span class="nav-icon">👤</span>
+        <span class="nav-label">Profile</span>
+      </a>
+    </nav>
+
+    <div id="log" class="log info" style="display:none"></div>
+    <script type="module" src="/events.js"></script>
+  </body>
+</html>

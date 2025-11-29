@@ -1,56 +1,51 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Поиск • Collabster</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/styles.css" />
-    <link rel="stylesheet" href="/discover.css" />
-  </head>
-  <body>
-    <main class="discover-wrap">
-      <header class="discover-header">
-        <h2>Поиск</h2>
-        <div style="display: flex; gap: 8px;">
-          <button id="profileBtn" class="icon-btn" title="Мой профиль">👤</button>
-          <button id="signOut" class="icon-btn" title="Выйти">⎋</button>
-        </div>
-      </header>
 
-      <section class="card" id="card" aria-live="polite">
-        <!-- populated by JS -->
-      </section>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Поиск • Collabster</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css" />
+  <link rel="stylesheet" href="/discover.css" />
+</head>
 
-      <div class="actions">
-        <button id="noBtn" class="circle ghost" aria-label="Не интересно">✕</button>
-        <button id="yesBtn" class="circle grad" aria-label="Нравится">❤</button>
-      </div>
+<body>
+  <main class="discover-wrap page-with-nav">
+    <header class="discover-header">
+      <h2>Поиск</h2>
+      <button id="signOut" class="icon-btn" title="Выйти">⎋</button>
+    </header>
 
-      <div class="dots" id="dots"></div>
+    <div class="search-section">
+      <input type="text" id="searchInput" placeholder="Поиск по навыкам (например: фото, дизайн, музыка)..."
+        autocomplete="off" />
+    </div>
 
-      <!-- Like Dialog -->
-      <div id="likeDialog" class="dialog-overlay hidden">
-        <div class="dialog">
-          <div class="dialog-header">
-            <h3>❤️ Вам понравился этот профиль!</h3>
-          </div>
-          <div class="dialog-content">
-            <p>Хотите посмотреть полный профиль?</p>
-          </div>
-          <div class="dialog-actions">
-            <button id="viewProfileBtn" class="primary">Посмотреть профиль</button>
-            <button id="continueBtn" class="secondary">Продолжить</button>
-          </div>
-        </div>
-      </div>
-    </main>
+    <section class="cards-list" id="cardsList" aria-live="polite">
+      <!-- Cards populated by JS -->
+    </section>
+  </main>
 
-    <div id="log" class="log info" style="display:none"></div>
-    <script type="module" src="/discover.js"></script>
-  </body>
+  <nav class="bottom-nav">
+    <a href="/discover.html" class="nav-item active">
+      <span class="nav-icon">❤️</span>
+      <span class="nav-label">Collabs</span>
+    </a>
+    <a href="/events.html" class="nav-item">
+      <span class="nav-icon">📅</span>
+      <span class="nav-label">Events</span>
+    </a>
+    <a href="/profile.html" class="nav-item">
+      <span class="nav-icon">👤</span>
+      <span class="nav-label">Profile</span>
+    </a>
+  </nav>
+
+  <div id="log" class="log info" style="display:none"></div>
+  <script type="module" src="/discover.js"></script>
+</body>
+
 </html>
-
-
